@@ -1,0 +1,402 @@
+SysRepo Analysis - v: 0.0.1 2019-02-28 19:39:23.305626
+1. The following repository will be analized /Users/armandosoaressousa/git/promocity
+2. The following branch will be analized 
+3. The following developers have been worked in the project:  ['Armando Soares Sousa', 'armandossrecife']
+4. The following commits have been saved in the project
+List all commits from authors of  /Users/armandosoaressousa/git/promocity
+hash e3b8141b1e905e8230ce791e16e3d3abb8b619c6 authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-10-31 00:28:40-03:00
+hash fc85e473f543f543c68110d62624180fc3b24606 authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-10-31 00:40:14-03:00
+hash 4870cfcdffabe16ec28e524da7d707cd74e25352 authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-10-31 01:10:09-03:00
+hash 46c1d5ecc189124736d3feea3832cf206cc10e43 authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-10-31 11:30:37-03:00
+hash db4534aacac1e55fbb2f23132db5115c1a7a9606 authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-10-31 15:53:32-03:00
+hash 507ade676867670ccfa22b214d6dc13af408c3a3 authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-11-01 19:24:13-03:00
+hash 415fa2a5d1c5ce0351620b7418d223bbd7805f5c authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-11-02 16:57:10-03:00
+hash a2dee4f863d0ba1910a73e5bd81fa0b5079c814b authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-11-03 17:00:58-03:00
+hash 92c3bc40669655b7aaaa57d5575fcc7c045c35fe authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-11-03 17:02:44-03:00
+hash 72c296ffbc22f72ba4dc929d8d30a331da551297 authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-11-03 18:00:50-03:00
+hash 518adcc1f00ae464145e41eaf5ac0522c237b774 authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-11-07 09:13:33-03:00
+hash 26519cda15c42e025d23c66b9c65091e584fbea4 authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-11-07 09:20:05-03:00
+hash dd8749eee95db52d2328f9ae308d053d6f0cb8f4 authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-11-07 21:17:09-03:00
+hash c44a0bca97fc07152a99df652fe5e438b134e4f2 authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-11-08 17:32:03-03:00
+hash 3c2298e0468825be7ccd53930440e14fd405e767 authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-11-13 10:11:26-03:00
+hash c14eddec7949328d89eeb2ebfc262d9905d15de2 authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-11-13 12:19:15-03:00
+hash 571dcf2e8ec330791edd5cedfd68c8fb6acdde14 authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-11-13 12:33:40-03:00
+hash ac6771edc9020800d08ad9fa5c2e88dcc3d0dac8 authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-11-20 12:14:28-03:00
+hash d90fc433e3a68d5cfd27939978ab2a3320fc8c55 authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-11-20 12:18:15-03:00
+hash a1bf9efd22a20affff37394c50a4c87b829f4bd4 authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-11-20 12:18:37-03:00
+hash 5d8feeffe6b81bda589d8d7469aaedef1eb4b592 authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-11-20 12:32:41-03:00
+hash 5691f8dadc143a1ae5e9fe6e4d97cd527c58141c authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-11-20 12:33:34-03:00
+hash 7e9b4365c81c2229be9988aff6e8a22c2dc8cfff authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-11-20 12:33:54-03:00
+hash b40fdb8c41690b38d62577aeb0cbabbdc3c23807 authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-11-20 12:45:20-03:00
+hash 856e48e490e972d9556f0ef9c6eba5fa3af1aa02 authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-11-21 10:22:27-03:00
+hash c3d3e28f95596399da41a38d16331be80895c9a5 authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-11-21 10:29:32-03:00
+hash 1879c4c0da1dae78a302b18578cd73b362c2cca9 authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-11-21 10:32:36-03:00
+hash 6147dfb21ecce1d6b732d6e54adec5110aac3243 authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-11-21 18:19:28-03:00
+hash dfd04fa97d199b479f7acd6762e100742179afd8 authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-11-21 18:22:04-03:00
+hash 5666a6b2a2244c7cc441223fc5b3ef835f81a38c authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-11-21 18:27:39-03:00
+hash 1fa1284056b9d14d5bba2657ee4249bdcb537065 authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-11-21 19:41:29-03:00
+hash 48ca5e0b65678b35f8a71c2d63004e4f8740a1fa authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-11-21 19:43:13-03:00
+hash c3f2b362fb49d6274ac6e7853cd041281366b00d authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-11-21 23:16:42-03:00
+hash a2e707f29022d249ae005968f1ddb2ca7b685f1b authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-11-21 23:17:44-03:00
+hash 3866a63910abdebaf334a07396b7ae27cd02fd03 authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-11-22 11:59:41-03:00
+hash b22db809affa270aa73969815798bb8c8e8fafa4 authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-11-22 12:00:55-03:00
+hash c03e181fe0c12929ce556eb3142061419a6dd541 authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-11-23 12:43:50-03:00
+hash f4799e93b0380ecc869215403b0ad31d80f9f1c5 authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-11-23 12:45:03-03:00
+hash 89a0c92f2439f19015dbaf1eff521c40992a4f61 authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-11-25 12:50:24-03:00
+hash b3bcd70f2efa540e19ec67a91e8e109ce9e07eaf authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-11-27 19:17:17-03:00
+hash c060cedb26408e851c023ac3ff81e6d3534bdd6a authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-11-27 19:21:13-03:00
+hash 1aef601d52b2666ccf4c7ddb23a408c8792554f2 authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-11-28 13:57:02-03:00
+hash 9e081dd30b66812351bb59c7df4a6d1a4868de51 authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-11-28 13:58:18-03:00
+hash 62dddb7e1c25ac14e9ef51bd361db047818145d3 authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-11-28 14:44:42-03:00
+hash ba478c2c1a0b8c7df6a5d530e6c4bf3152681630 authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-11-28 17:15:36-03:00
+hash 7e27606966898408c6565d669613b49c6792847f authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-11-28 17:16:55-03:00
+hash 06c3e4d2aa0a8c60ec53518d836a4127361d694d authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-11-28 21:09:35-03:00
+hash 00286b1f85555efc6c02e4c150dd24c43109eb91 authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-11-28 21:11:41-03:00
+hash 5bd317d6a0d1557f507fb4565c64b22d0ea6c537 authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-11-28 21:16:36-03:00
+hash 4caf747d7a2e2bfe46b5e9f92e2d3f96bc66ddba authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-11-29 07:55:29-03:00
+hash 9f744fe3ec9840ca4a2765237d31bd138ca88b5e authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-11-29 08:30:52-03:00
+hash d7b1aa98c91eb4c6c17ed00e6313bd79b3bc688b authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-11-29 08:32:53-03:00
+hash 80c6f5a5e7d7033ae2a7a63982262c45d8e88107 authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-11-29 08:37:42-03:00
+hash d1ae7bbc9223761c49e49ec7b8498de783dc4bf8 authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-11-29 16:49:45-03:00
+hash 853420df4e084998d190fd59ff6819a4107f6a1f authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-11-29 16:51:07-03:00
+hash bcc61b8c6f83413a008481a3803223335168ae2a authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-11-29 22:52:52-03:00
+hash af2fab8657d3862459fa65a279ae65ecab7b0c62 authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-11-30 07:49:41-03:00
+hash 0e5e2ebd754dc63a2de0fa32f528426a9639b22f authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-11-30 08:24:46-03:00
+hash c2ce8614ba8c56e5ea91db447ccc92a1ed909d32 authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-11-30 08:27:53-03:00
+hash 865a34b80f178163779fb915837151bb96b770f6 authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-11-30 08:37:28-03:00
+hash c5a74ea308ebf277d93b642a6b72971a1d1adfcf authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-11-30 09:22:43-03:00
+hash 2e03ed895f59eba4e5433286eacc8c20f93fb4d2 authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-11-30 09:46:20-03:00
+hash 342eb7a0acc8b39bf7e33ce9cf15f8a5c30a97de authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-11-30 10:46:25-03:00
+hash 2bee7e5fc9a40784e59a3aa98cce08b239027ec4 authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-11-30 11:22:56-03:00
+hash 0566c2cba7526418c1bc86aa2577d56c4ebda80e authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-12-02 13:07:43-03:00
+hash a187c64ce6d4d69713ae2cd04ac5866c64d7d9ce authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-12-02 17:22:06-03:00
+hash abb4c4514fd3f5d6698f0512bcf72405e46fb8ec authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-12-03 13:53:33-03:00
+hash 926e4565a49135a72af3136f8821f1fbec7c3586 authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-12-03 16:40:40-03:00
+hash 22e22bb1cf29c2d61617ecf394d340c2a73c1616 authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-12-03 17:54:52-03:00
+hash 4c5a3c43c57ebf0742b808b8ca463a7cbbdd893c authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-12-04 12:03:06-03:00
+hash 08917a56ff88b88a0e5b0148b6b5de779fb546aa authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-12-04 17:22:47-03:00
+hash f702712fec700d4fad0dbd0a8e88f4f34413e278 authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-12-04 17:23:04-03:00
+hash 11e7e5d219f1d551f2c5cb48fadd06690e04b6f3 authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-12-04 17:53:22-03:00
+hash 9df4f86d9b61d53ce2daf240a90eef62d9bb2acd authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-12-05 15:26:10-03:00
+hash 8f44887a4ede2c3bccd64e978d89a3111357e51a authored by armandossrecife e-mail armando.sousa@gmail.com on date 2018-12-06 14:36:53-03:00
+hash d58e89969c8e53752e2573ef9013f58efe87e204 authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-12-06 14:56:10-03:00
+hash 2bd186002567b87ff8f839042e6e2c22f05a1869 authored by Armando Soares Sousa e-mail armando.sousa@gmail.com on date 2018-12-06 14:57:29-03:00
+5. The following files were changed for each commit
+Author Armando Soares Sousa modified README.md in commit e3b8141b1e905e8230ce791e16e3d3abb8b619c6
+Author armandossrecife modified pom.xml in commit fc85e473f543f543c68110d62624180fc3b24606
+Author armandossrecife modified BackendApplication.java in commit fc85e473f543f543c68110d62624180fc3b24606
+Author armandossrecife modified GenericExceptionMapper.java in commit fc85e473f543f543c68110d62624180fc3b24606
+Author armandossrecife modified JerseyConfiguration.java in commit fc85e473f543f543c68110d62624180fc3b24606
+Author armandossrecife modified UserLocationMonitoring.java in commit fc85e473f543f543c68110d62624180fc3b24606
+Author armandossrecife modified BookController.java in commit fc85e473f543f543c68110d62624180fc3b24606
+Author armandossrecife modified StoreController.java in commit fc85e473f543f543c68110d62624180fc3b24606
+Author armandossrecife modified UserController.java in commit fc85e473f543f543c68110d62624180fc3b24606
+Author armandossrecife modified Book.java in commit fc85e473f543f543c68110d62624180fc3b24606
+Author armandossrecife modified Category.java in commit fc85e473f543f543c68110d62624180fc3b24606
+Author armandossrecife modified Coupon.java in commit fc85e473f543f543c68110d62624180fc3b24606
+Author armandossrecife modified Promotion.java in commit fc85e473f543f543c68110d62624180fc3b24606
+Author armandossrecife modified Store.java in commit fc85e473f543f543c68110d62624180fc3b24606
+Author armandossrecife modified User.java in commit fc85e473f543f543c68110d62624180fc3b24606
+Author armandossrecife modified BookService.java in commit fc85e473f543f543c68110d62624180fc3b24606
+Author armandossrecife modified CouponService.java in commit fc85e473f543f543c68110d62624180fc3b24606
+Author armandossrecife modified PromotionService.java in commit fc85e473f543f543c68110d62624180fc3b24606
+Author armandossrecife modified StoreService.java in commit fc85e473f543f543c68110d62624180fc3b24606
+Author armandossrecife modified UserService.java in commit fc85e473f543f543c68110d62624180fc3b24606
+Author armandossrecife modified BookNotFoundException.java in commit fc85e473f543f543c68110d62624180fc3b24606
+Author armandossrecife modified CouponNotFoundException.java in commit fc85e473f543f543c68110d62624180fc3b24606
+Author armandossrecife modified PromotionNotFoundException.java in commit fc85e473f543f543c68110d62624180fc3b24606
+Author armandossrecife modified StoreNotFoundException.java in commit fc85e473f543f543c68110d62624180fc3b24606
+Author armandossrecife modified UserNotFoundException.java in commit fc85e473f543f543c68110d62624180fc3b24606
+Author armandossrecife modified ICouponService.java in commit fc85e473f543f543c68110d62624180fc3b24606
+Author armandossrecife modified IPromotionService.java in commit fc85e473f543f543c68110d62624180fc3b24606
+Author armandossrecife modified IStoreService.java in commit fc85e473f543f543c68110d62624180fc3b24606
+Author armandossrecife modified IUserService.java in commit fc85e473f543f543c68110d62624180fc3b24606
+Author armandossrecife modified application.yml in commit fc85e473f543f543c68110d62624180fc3b24606
+Author armandossrecife modified BackendApplicationTests.java in commit fc85e473f543f543c68110d62624180fc3b24606
+Author Armando Soares Sousa modified README.md in commit 4870cfcdffabe16ec28e524da7d707cd74e25352
+Author Armando Soares Sousa modified README.md in commit 46c1d5ecc189124736d3feea3832cf206cc10e43
+Author armandossrecife modified StoreController.java in commit db4534aacac1e55fbb2f23132db5115c1a7a9606
+Author armandossrecife modified UserController.java in commit db4534aacac1e55fbb2f23132db5115c1a7a9606
+Author armandossrecife modified Promotion.java in commit db4534aacac1e55fbb2f23132db5115c1a7a9606
+Author armandossrecife modified Store.java in commit db4534aacac1e55fbb2f23132db5115c1a7a9606
+Author armandossrecife modified StoreService.java in commit db4534aacac1e55fbb2f23132db5115c1a7a9606
+Author armandossrecife modified BackendApplication.java in commit 507ade676867670ccfa22b214d6dc13af408c3a3
+Author armandossrecife modified JerseyConfiguration.java in commit 507ade676867670ccfa22b214d6dc13af408c3a3
+Author armandossrecife modified CouponsSent.java in commit 507ade676867670ccfa22b214d6dc13af408c3a3
+Author armandossrecife modified Messenger.java in commit 507ade676867670ccfa22b214d6dc13af408c3a3
+Author armandossrecife modified PromotionArea.java in commit 507ade676867670ccfa22b214d6dc13af408c3a3
+Author armandossrecife modified UserLocationMonitoring.java in commit 507ade676867670ccfa22b214d6dc13af408c3a3
+Author armandossrecife modified StoreController.java in commit 507ade676867670ccfa22b214d6dc13af408c3a3
+Author armandossrecife modified UserController.java in commit 507ade676867670ccfa22b214d6dc13af408c3a3
+Author armandossrecife modified Coupon.java in commit 507ade676867670ccfa22b214d6dc13af408c3a3
+Author armandossrecife modified Promotion.java in commit 507ade676867670ccfa22b214d6dc13af408c3a3
+Author armandossrecife modified Store.java in commit 507ade676867670ccfa22b214d6dc13af408c3a3
+Author armandossrecife modified User.java in commit 507ade676867670ccfa22b214d6dc13af408c3a3
+Author armandossrecife modified StoreService.java in commit 507ade676867670ccfa22b214d6dc13af408c3a3
+Author armandossrecife modified UserService.java in commit 507ade676867670ccfa22b214d6dc13af408c3a3
+Author armandossrecife modified GPSPoint.java in commit 507ade676867670ccfa22b214d6dc13af408c3a3
+Author armandossrecife modified GeographicArea.java in commit 507ade676867670ccfa22b214d6dc13af408c3a3
+Author armandossrecife modified pom.xml in commit 415fa2a5d1c5ce0351620b7418d223bbd7805f5c
+Author armandossrecife modified CouponsSent.java in commit 415fa2a5d1c5ce0351620b7418d223bbd7805f5c
+Author armandossrecife modified Messenger.java in commit 415fa2a5d1c5ce0351620b7418d223bbd7805f5c
+Author armandossrecife modified PromotionArea.java in commit 415fa2a5d1c5ce0351620b7418d223bbd7805f5c
+Author armandossrecife modified UserLocationMonitoring.java in commit 415fa2a5d1c5ce0351620b7418d223bbd7805f5c
+Author armandossrecife modified UserController.java in commit 415fa2a5d1c5ce0351620b7418d223bbd7805f5c
+Author armandossrecife modified AbstractModel.java in commit 415fa2a5d1c5ce0351620b7418d223bbd7805f5c
+Author armandossrecife modified User.java in commit 415fa2a5d1c5ce0351620b7418d223bbd7805f5c
+Author armandossrecife modified Users.java in commit 415fa2a5d1c5ce0351620b7418d223bbd7805f5c
+Author armandossrecife modified UsersRepository.java in commit 415fa2a5d1c5ce0351620b7418d223bbd7805f5c
+Author armandossrecife modified AbstractService.java in commit 415fa2a5d1c5ce0351620b7418d223bbd7805f5c
+Author armandossrecife modified UserService.java in commit 415fa2a5d1c5ce0351620b7418d223bbd7805f5c
+Author armandossrecife modified UsersService.java in commit 415fa2a5d1c5ce0351620b7418d223bbd7805f5c
+Author armandossrecife modified IUserService.java in commit 415fa2a5d1c5ce0351620b7418d223bbd7805f5c
+Author armandossrecife modified GeographicArea.java in commit 415fa2a5d1c5ce0351620b7418d223bbd7805f5c
+Author armandossrecife modified application.yml in commit 415fa2a5d1c5ce0351620b7418d223bbd7805f5c
+Author armandossrecife modified JerseyConfiguration.java in commit a2dee4f863d0ba1910a73e5bd81fa0b5079c814b
+Author armandossrecife modified CouponController.java in commit a2dee4f863d0ba1910a73e5bd81fa0b5079c814b
+Author armandossrecife modified PromotionController.java in commit a2dee4f863d0ba1910a73e5bd81fa0b5079c814b
+Author armandossrecife modified Coupon.java in commit a2dee4f863d0ba1910a73e5bd81fa0b5079c814b
+Author armandossrecife modified Promotion.java in commit a2dee4f863d0ba1910a73e5bd81fa0b5079c814b
+Author armandossrecife modified CouponsRepository.java in commit a2dee4f863d0ba1910a73e5bd81fa0b5079c814b
+Author armandossrecife modified CouponService.java in commit a2dee4f863d0ba1910a73e5bd81fa0b5079c814b
+Author armandossrecife modified CouponsService.java in commit a2dee4f863d0ba1910a73e5bd81fa0b5079c814b
+Author armandossrecife modified PromotionService.java in commit a2dee4f863d0ba1910a73e5bd81fa0b5079c814b
+Author armandossrecife modified PromotionsService.java in commit a2dee4f863d0ba1910a73e5bd81fa0b5079c814b
+Author armandossrecife modified StoreService.java in commit a2dee4f863d0ba1910a73e5bd81fa0b5079c814b
+Author armandossrecife modified security.sql in commit a2dee4f863d0ba1910a73e5bd81fa0b5079c814b
+Author armandossrecife modified PromotionsRepository.java in commit 92c3bc40669655b7aaaa57d5575fcc7c045c35fe
+Author armandossrecife modified JerseyConfiguration.java in commit 72c296ffbc22f72ba4dc929d8d30a331da551297
+Author armandossrecife modified UserLocationMonitoring.java in commit 72c296ffbc22f72ba4dc929d8d30a331da551297
+Author armandossrecife modified StoreController.java in commit 72c296ffbc22f72ba4dc929d8d30a331da551297
+Author armandossrecife modified Store.java in commit 72c296ffbc22f72ba4dc929d8d30a331da551297
+Author armandossrecife modified StoresRepository.java in commit 72c296ffbc22f72ba4dc929d8d30a331da551297
+Author armandossrecife modified StoreService.java in commit 72c296ffbc22f72ba4dc929d8d30a331da551297
+Author armandossrecife modified security.sql in commit 72c296ffbc22f72ba4dc929d8d30a331da551297
+Author Armando Soares Sousa modified security.sql in commit 518adcc1f00ae464145e41eaf5ac0522c237b774
+Author Armando Soares Sousa modified popula.sql in commit 26519cda15c42e025d23c66b9c65091e584fbea4
+Author Armando Soares Sousa modified popula.sql in commit dd8749eee95db52d2328f9ae308d053d6f0cb8f4
+Author armandossrecife modified StoreController.java in commit c44a0bca97fc07152a99df652fe5e438b134e4f2
+Author armandossrecife modified StoreController.java in commit 3c2298e0468825be7ccd53930440e14fd405e767
+Author armandossrecife modified ReportCoupon.java in commit 3c2298e0468825be7ccd53930440e14fd405e767
+Author armandossrecife modified ReportPromotion.java in commit 3c2298e0468825be7ccd53930440e14fd405e767
+Author armandossrecife modified JerseyConfiguration.java in commit c14eddec7949328d89eeb2ebfc262d9905d15de2
+Author armandossrecife modified PrincipalController.java in commit c14eddec7949328d89eeb2ebfc262d9905d15de2
+Author armandossrecife modified UserController.java in commit c14eddec7949328d89eeb2ebfc262d9905d15de2
+Author armandossrecife modified AbstractModel.java in commit c14eddec7949328d89eeb2ebfc262d9905d15de2
+Author armandossrecife modified Users.java in commit c14eddec7949328d89eeb2ebfc262d9905d15de2
+Author armandossrecife modified ReportApplication.java in commit c14eddec7949328d89eeb2ebfc262d9905d15de2
+Author armandossrecife modified security.sql in commit c14eddec7949328d89eeb2ebfc262d9905d15de2
+Author Armando Soares Sousa modified pom.xml in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified JerseyConfiguration.java in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified CouponsSent.java in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified Messenger.java in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified PromotionArea.java in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified UserLocationMonitoring.java in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified CouponController.java in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified PrincipalController.java in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified PromotionController.java in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified StoreController.java in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified UserController.java in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified AbstractModel.java in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified Coupon.java in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified Promotion.java in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified Store.java in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified User.java in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified Users.java in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified ReportApplication.java in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified ReportCoupon.java in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified ReportPromotion.java in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified CouponsRepository.java in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified PromotionsRepository.java in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified StoresRepository.java in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified UsersRepository.java in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified AbstractService.java in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified CouponService.java in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified CouponsService.java in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified PromotionService.java in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified PromotionsService.java in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified StoreService.java in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified UserService.java in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified UsersService.java in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified IUserService.java in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified GeographicArea.java in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified application.yml in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified popula.sql in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified security.sql in commit 571dcf2e8ec330791edd5cedfd68c8fb6acdde14
+Author Armando Soares Sousa modified popula.sql in commit ac6771edc9020800d08ad9fa5c2e88dcc3d0dac8
+Author Armando Soares Sousa modified security.sql in commit d90fc433e3a68d5cfd27939978ab2a3320fc8c55
+Author Armando Soares Sousa modified security.sql in commit a1bf9efd22a20affff37394c50a4c87b829f4bd4
+Author Armando Soares Sousa modified populadados.sql in commit 5d8feeffe6b81bda589d8d7469aaedef1eb4b592
+Author Armando Soares Sousa modified populausers.sql in commit 5691f8dadc143a1ae5e9fe6e4d97cd527c58141c
+Author Armando Soares Sousa modified popula.sql in commit 7e9b4365c81c2229be9988aff6e8a22c2dc8cfff
+Author Armando Soares Sousa modified README.md in commit b40fdb8c41690b38d62577aeb0cbabbdc3c23807
+Author armandossrecife modified JerseyConfiguration.java in commit 856e48e490e972d9556f0ef9c6eba5fa3af1aa02
+Author armandossrecife modified PromotionArea.java in commit 856e48e490e972d9556f0ef9c6eba5fa3af1aa02
+Author armandossrecife modified UserLocationMonitoring.java in commit 856e48e490e972d9556f0ef9c6eba5fa3af1aa02
+Author armandossrecife modified PrincipalController.java in commit 856e48e490e972d9556f0ef9c6eba5fa3af1aa02
+Author armandossrecife modified StoreController.java in commit 856e48e490e972d9556f0ef9c6eba5fa3af1aa02
+Author armandossrecife modified UserController.java in commit 856e48e490e972d9556f0ef9c6eba5fa3af1aa02
+Author Armando Soares Sousa modified README.md in commit c3d3e28f95596399da41a38d16331be80895c9a5
+Author Armando Soares Sousa modified README.md in commit 1879c4c0da1dae78a302b18578cd73b362c2cca9
+Author armandossrecife modified UserController.java in commit 6147dfb21ecce1d6b732d6e54adec5110aac3243
+Author armandossrecife modified UserController.java in commit dfd04fa97d199b479f7acd6762e100742179afd8
+Author armandossrecife modified pom.xml in commit 1fa1284056b9d14d5bba2657ee4249bdcb537065
+Author armandossrecife modified UserController.java in commit 1fa1284056b9d14d5bba2657ee4249bdcb537065
+Author armandossrecife modified UsersRepository.java in commit 1fa1284056b9d14d5bba2657ee4249bdcb537065
+Author armandossrecife modified WebSecurityConfig.java in commit 1fa1284056b9d14d5bba2657ee4249bdcb537065
+Author armandossrecife modified UsersService.java in commit 1fa1284056b9d14d5bba2657ee4249bdcb537065
+Author armandossrecife modified GeradorSenha.java in commit 1fa1284056b9d14d5bba2657ee4249bdcb537065
+Author armandossrecife modified Message.java in commit 1fa1284056b9d14d5bba2657ee4249bdcb537065
+Author Armando Soares Sousa modified pom.xml in commit 48ca5e0b65678b35f8a71c2d63004e4f8740a1fa
+Author Armando Soares Sousa modified UserController.java in commit 48ca5e0b65678b35f8a71c2d63004e4f8740a1fa
+Author Armando Soares Sousa modified UsersRepository.java in commit 48ca5e0b65678b35f8a71c2d63004e4f8740a1fa
+Author Armando Soares Sousa modified WebSecurityConfig.java in commit 48ca5e0b65678b35f8a71c2d63004e4f8740a1fa
+Author Armando Soares Sousa modified UsersService.java in commit 48ca5e0b65678b35f8a71c2d63004e4f8740a1fa
+Author Armando Soares Sousa modified GeradorSenha.java in commit 48ca5e0b65678b35f8a71c2d63004e4f8740a1fa
+Author Armando Soares Sousa modified Message.java in commit 48ca5e0b65678b35f8a71c2d63004e4f8740a1fa
+Author armandossrecife modified UserLocationMonitoring.java in commit c3f2b362fb49d6274ac6e7853cd041281366b00d
+Author armandossrecife modified UserController.java in commit c3f2b362fb49d6274ac6e7853cd041281366b00d
+Author armandossrecife modified Coupon.java in commit c3f2b362fb49d6274ac6e7853cd041281366b00d
+Author armandossrecife modified Users.java in commit c3f2b362fb49d6274ac6e7853cd041281366b00d
+Author Armando Soares Sousa modified UserLocationMonitoring.java in commit a2e707f29022d249ae005968f1ddb2ca7b685f1b
+Author Armando Soares Sousa modified UserController.java in commit a2e707f29022d249ae005968f1ddb2ca7b685f1b
+Author Armando Soares Sousa modified Coupon.java in commit a2e707f29022d249ae005968f1ddb2ca7b685f1b
+Author Armando Soares Sousa modified Users.java in commit a2e707f29022d249ae005968f1ddb2ca7b685f1b
+Author armandossrecife modified Coupon.java in commit 3866a63910abdebaf334a07396b7ae27cd02fd03
+Author armandossrecife modified Users.java in commit 3866a63910abdebaf334a07396b7ae27cd02fd03
+Author armandossrecife modified populausers.sql in commit 3866a63910abdebaf334a07396b7ae27cd02fd03
+Author Armando Soares Sousa modified Coupon.java in commit b22db809affa270aa73969815798bb8c8e8fafa4
+Author Armando Soares Sousa modified Users.java in commit b22db809affa270aa73969815798bb8c8e8fafa4
+Author Armando Soares Sousa modified populausers.sql in commit b22db809affa270aa73969815798bb8c8e8fafa4
+Author armandossrecife modified PrincipalController.java in commit c03e181fe0c12929ce556eb3142061419a6dd541
+Author armandossrecife modified UserController.java in commit c03e181fe0c12929ce556eb3142061419a6dd541
+Author armandossrecife modified Users.java in commit c03e181fe0c12929ce556eb3142061419a6dd541
+Author armandossrecife modified security.sql in commit c03e181fe0c12929ce556eb3142061419a6dd541
+Author armandossrecife modified teste-promocity.sh in commit c03e181fe0c12929ce556eb3142061419a6dd541
+Author Armando Soares Sousa modified PrincipalController.java in commit f4799e93b0380ecc869215403b0ad31d80f9f1c5
+Author Armando Soares Sousa modified UserController.java in commit f4799e93b0380ecc869215403b0ad31d80f9f1c5
+Author Armando Soares Sousa modified Users.java in commit f4799e93b0380ecc869215403b0ad31d80f9f1c5
+Author Armando Soares Sousa modified security.sql in commit f4799e93b0380ecc869215403b0ad31d80f9f1c5
+Author Armando Soares Sousa modified teste-promocity.sh in commit f4799e93b0380ecc869215403b0ad31d80f9f1c5
+Author Armando Soares Sousa modified populausers.sql in commit 89a0c92f2439f19015dbaf1eff521c40992a4f61
+Author armandossrecife modified StoreController.java in commit b3bcd70f2efa540e19ec67a91e8e109ce9e07eaf
+Author armandossrecife modified UserController.java in commit b3bcd70f2efa540e19ec67a91e8e109ce9e07eaf
+Author armandossrecife modified MyStores.java in commit b3bcd70f2efa540e19ec67a91e8e109ce9e07eaf
+Author armandossrecife modified Users.java in commit b3bcd70f2efa540e19ec67a91e8e109ce9e07eaf
+Author armandossrecife modified MyStoresRepository.java in commit b3bcd70f2efa540e19ec67a91e8e109ce9e07eaf
+Author armandossrecife modified MyStoresService.java in commit b3bcd70f2efa540e19ec67a91e8e109ce9e07eaf
+Author Armando Soares Sousa modified StoreController.java in commit c060cedb26408e851c023ac3ff81e6d3534bdd6a
+Author Armando Soares Sousa modified UserController.java in commit c060cedb26408e851c023ac3ff81e6d3534bdd6a
+Author Armando Soares Sousa modified MyStores.java in commit c060cedb26408e851c023ac3ff81e6d3534bdd6a
+Author Armando Soares Sousa modified Users.java in commit c060cedb26408e851c023ac3ff81e6d3534bdd6a
+Author Armando Soares Sousa modified MyStoresRepository.java in commit c060cedb26408e851c023ac3ff81e6d3534bdd6a
+Author Armando Soares Sousa modified MyStoresService.java in commit c060cedb26408e851c023ac3ff81e6d3534bdd6a
+Author armandossrecife modified UserLocationMonitoring.java in commit 1aef601d52b2666ccf4c7ddb23a408c8792554f2
+Author armandossrecife modified UserController.java in commit 1aef601d52b2666ccf4c7ddb23a408c8792554f2
+Author armandossrecife modified Users.java in commit 1aef601d52b2666ccf4c7ddb23a408c8792554f2
+Author Armando Soares Sousa modified UserLocationMonitoring.java in commit 9e081dd30b66812351bb59c7df4a6d1a4868de51
+Author Armando Soares Sousa modified UserController.java in commit 9e081dd30b66812351bb59c7df4a6d1a4868de51
+Author Armando Soares Sousa modified Users.java in commit 9e081dd30b66812351bb59c7df4a6d1a4868de51
+Author armandossrecife modified PrincipalController.java in commit 62dddb7e1c25ac14e9ef51bd361db047818145d3
+Author armandossrecife modified teste-promocity.sh in commit 62dddb7e1c25ac14e9ef51bd361db047818145d3
+Author armandossrecife modified UserController.java in commit ba478c2c1a0b8c7df6a5d530e6c4bf3152681630
+Author Armando Soares Sousa modified PrincipalController.java in commit 7e27606966898408c6565d669613b49c6792847f
+Author Armando Soares Sousa modified UserController.java in commit 7e27606966898408c6565d669613b49c6792847f
+Author Armando Soares Sousa modified teste-promocity.sh in commit 7e27606966898408c6565d669613b49c6792847f
+Author armandossrecife modified UserLocationMonitoring.java in commit 06c3e4d2aa0a8c60ec53518d836a4127361d694d
+Author armandossrecife modified UserController.java in commit 06c3e4d2aa0a8c60ec53518d836a4127361d694d
+Author armandossrecife modified Coupon.java in commit 06c3e4d2aa0a8c60ec53518d836a4127361d694d
+Author armandossrecife modified Users.java in commit 06c3e4d2aa0a8c60ec53518d836a4127361d694d
+Author armandossrecife modified teste-promocity.sh in commit 06c3e4d2aa0a8c60ec53518d836a4127361d694d
+Author Armando Soares Sousa modified UserLocationMonitoring.java in commit 00286b1f85555efc6c02e4c150dd24c43109eb91
+Author Armando Soares Sousa modified UserController.java in commit 00286b1f85555efc6c02e4c150dd24c43109eb91
+Author Armando Soares Sousa modified Coupon.java in commit 00286b1f85555efc6c02e4c150dd24c43109eb91
+Author Armando Soares Sousa modified Users.java in commit 00286b1f85555efc6c02e4c150dd24c43109eb91
+Author Armando Soares Sousa modified teste-promocity.sh in commit 00286b1f85555efc6c02e4c150dd24c43109eb91
+Author Armando Soares Sousa modified PrincipalController.java in commit 5bd317d6a0d1557f507fb4565c64b22d0ea6c537
+Author armandossrecife modified StoreController.java in commit 4caf747d7a2e2bfe46b5e9f92e2d3f96bc66ddba
+Author armandossrecife modified UserController.java in commit 4caf747d7a2e2bfe46b5e9f92e2d3f96bc66ddba
+Author armandossrecife modified Coupon.java in commit 4caf747d7a2e2bfe46b5e9f92e2d3f96bc66ddba
+Author armandossrecife modified teste-promocity.sh in commit 4caf747d7a2e2bfe46b5e9f92e2d3f96bc66ddba
+Author Armando Soares Sousa modified StoreController.java in commit 9f744fe3ec9840ca4a2765237d31bd138ca88b5e
+Author Armando Soares Sousa modified UserController.java in commit 9f744fe3ec9840ca4a2765237d31bd138ca88b5e
+Author Armando Soares Sousa modified Coupon.java in commit 9f744fe3ec9840ca4a2765237d31bd138ca88b5e
+Author Armando Soares Sousa modified teste-promocity.sh in commit 9f744fe3ec9840ca4a2765237d31bd138ca88b5e
+Author armandossrecife modified StoreController.java in commit d7b1aa98c91eb4c6c17ed00e6313bd79b3bc688b
+Author armandossrecife modified PrincipalController.java in commit 80c6f5a5e7d7033ae2a7a63982262c45d8e88107
+Author armandossrecife modified UserController.java in commit d1ae7bbc9223761c49e49ec7b8498de783dc4bf8
+Author armandossrecife modified MyTracking.java in commit d1ae7bbc9223761c49e49ec7b8498de783dc4bf8
+Author armandossrecife modified Track.java in commit d1ae7bbc9223761c49e49ec7b8498de783dc4bf8
+Author armandossrecife modified Users.java in commit d1ae7bbc9223761c49e49ec7b8498de783dc4bf8
+Author armandossrecife modified MyTrackingRepository.java in commit d1ae7bbc9223761c49e49ec7b8498de783dc4bf8
+Author armandossrecife modified TrackRepository.java in commit d1ae7bbc9223761c49e49ec7b8498de783dc4bf8
+Author armandossrecife modified MyTrackingService.java in commit d1ae7bbc9223761c49e49ec7b8498de783dc4bf8
+Author armandossrecife modified TrackService.java in commit d1ae7bbc9223761c49e49ec7b8498de783dc4bf8
+Author armandossrecife modified ManipuladorDatas.java in commit d1ae7bbc9223761c49e49ec7b8498de783dc4bf8
+Author Armando Soares Sousa modified StoreController.java in commit 853420df4e084998d190fd59ff6819a4107f6a1f
+Author Armando Soares Sousa modified UserController.java in commit 853420df4e084998d190fd59ff6819a4107f6a1f
+Author Armando Soares Sousa modified MyTracking.java in commit 853420df4e084998d190fd59ff6819a4107f6a1f
+Author Armando Soares Sousa modified Track.java in commit 853420df4e084998d190fd59ff6819a4107f6a1f
+Author Armando Soares Sousa modified Users.java in commit 853420df4e084998d190fd59ff6819a4107f6a1f
+Author Armando Soares Sousa modified MyTrackingRepository.java in commit 853420df4e084998d190fd59ff6819a4107f6a1f
+Author Armando Soares Sousa modified TrackRepository.java in commit 853420df4e084998d190fd59ff6819a4107f6a1f
+Author Armando Soares Sousa modified MyTrackingService.java in commit 853420df4e084998d190fd59ff6819a4107f6a1f
+Author Armando Soares Sousa modified TrackService.java in commit 853420df4e084998d190fd59ff6819a4107f6a1f
+Author Armando Soares Sousa modified ManipuladorDatas.java in commit 853420df4e084998d190fd59ff6819a4107f6a1f
+Author armandossrecife modified UserController.java in commit bcc61b8c6f83413a008481a3803223335168ae2a
+Author armandossrecife modified Coupon.java in commit bcc61b8c6f83413a008481a3803223335168ae2a
+Author armandossrecife modified MyTracking.java in commit bcc61b8c6f83413a008481a3803223335168ae2a
+Author armandossrecife modified Users.java in commit bcc61b8c6f83413a008481a3803223335168ae2a
+Author Armando Soares Sousa modified UserController.java in commit af2fab8657d3862459fa65a279ae65ecab7b0c62
+Author Armando Soares Sousa modified Coupon.java in commit af2fab8657d3862459fa65a279ae65ecab7b0c62
+Author Armando Soares Sousa modified MyTracking.java in commit af2fab8657d3862459fa65a279ae65ecab7b0c62
+Author Armando Soares Sousa modified Users.java in commit af2fab8657d3862459fa65a279ae65ecab7b0c62
+Author armandossrecife modified amigos.sh in commit 0e5e2ebd754dc63a2de0fa32f528426a9639b22f
+Author armandossrecife modified teste-promocity.sh in commit 0e5e2ebd754dc63a2de0fa32f528426a9639b22f
+Author armandossrecife modified teste.sh in commit 0e5e2ebd754dc63a2de0fa32f528426a9639b22f
+Author armandossrecife modified basico.sh in commit 0e5e2ebd754dc63a2de0fa32f528426a9639b22f
+Author armandossrecife modified ufc.sh in commit 0e5e2ebd754dc63a2de0fa32f528426a9639b22f
+Author armandossrecife modified limpa-cupons.sql in commit 0e5e2ebd754dc63a2de0fa32f528426a9639b22f
+Author armandossrecife modified restaura-banco.sql in commit 0e5e2ebd754dc63a2de0fa32f528426a9639b22f
+Author Armando Soares Sousa modified amigos.sh in commit c2ce8614ba8c56e5ea91db447ccc92a1ed909d32
+Author Armando Soares Sousa modified teste-promocity.sh in commit c2ce8614ba8c56e5ea91db447ccc92a1ed909d32
+Author Armando Soares Sousa modified teste.sh in commit c2ce8614ba8c56e5ea91db447ccc92a1ed909d32
+Author Armando Soares Sousa modified basico.sh in commit c2ce8614ba8c56e5ea91db447ccc92a1ed909d32
+Author Armando Soares Sousa modified ufc.sh in commit c2ce8614ba8c56e5ea91db447ccc92a1ed909d32
+Author Armando Soares Sousa modified limpa-cupons.sql in commit c2ce8614ba8c56e5ea91db447ccc92a1ed909d32
+Author Armando Soares Sousa modified restaura-banco.sql in commit c2ce8614ba8c56e5ea91db447ccc92a1ed909d32
+Author Armando Soares Sousa modified README.md in commit 865a34b80f178163779fb915837151bb96b770f6
+Author Armando Soares Sousa modified README.md in commit c5a74ea308ebf277d93b642a6b72971a1d1adfcf
+Author Armando Soares Sousa modified README.md in commit 2e03ed895f59eba4e5433286eacc8c20f93fb4d2
+Author armandossrecife modified Diagrama de Classes Servicos Promocity.asta in commit 342eb7a0acc8b39bf7e33ce9cf15f8a5c30a97de
+Author armandossrecife modified Diagrama de Classes Servicos Promocity.png in commit 342eb7a0acc8b39bf7e33ce9cf15f8a5c30a97de
+Author armandossrecife modified Statemachine Contexto Proximidade.png in commit 2bee7e5fc9a40784e59a3aa98cce08b239027ec4
+Author armandossrecife modified Statemachine Diagram Checa Proximidade Usuario.asta in commit 2bee7e5fc9a40784e59a3aa98cce08b239027ec4
+Author armandossrecife modified UserLocationMonitoring.java in commit 0566c2cba7526418c1bc86aa2577d56c4ebda80e
+Author armandossrecife modified teste-promocity.sh in commit a187c64ce6d4d69713ae2cd04ac5866c64d7d9ce
+Author armandossrecife modified UserLocationMonitoring.java in commit a187c64ce6d4d69713ae2cd04ac5866c64d7d9ce
+Author armandossrecife modified CouponController.java in commit a187c64ce6d4d69713ae2cd04ac5866c64d7d9ce
+Author armandossrecife modified PromotionController.java in commit a187c64ce6d4d69713ae2cd04ac5866c64d7d9ce
+Author armandossrecife modified StoreController.java in commit a187c64ce6d4d69713ae2cd04ac5866c64d7d9ce
+Author armandossrecife modified UserController.java in commit a187c64ce6d4d69713ae2cd04ac5866c64d7d9ce
+Author armandossrecife modified ReportCoupon.java in commit a187c64ce6d4d69713ae2cd04ac5866c64d7d9ce
+Author armandossrecife modified ReportPromotion.java in commit a187c64ce6d4d69713ae2cd04ac5866c64d7d9ce
+Author armandossrecife modified ReportStore.java in commit a187c64ce6d4d69713ae2cd04ac5866c64d7d9ce
+Author armandossrecife modified ReportUser.java in commit a187c64ce6d4d69713ae2cd04ac5866c64d7d9ce
+Author armandossrecife modified UserLocationMonitoring.java in commit abb4c4514fd3f5d6698f0512bcf72405e46fb8ec
+Author armandossrecife modified UserController.java in commit abb4c4514fd3f5d6698f0512bcf72405e46fb8ec
+Author armandossrecife modified LocationStore.java in commit abb4c4514fd3f5d6698f0512bcf72405e46fb8ec
+Author armandossrecife modified UserController.java in commit 926e4565a49135a72af3136f8821f1fbec7c3586
+Author armandossrecife modified Users.java in commit 926e4565a49135a72af3136f8821f1fbec7c3586
+Author armandossrecife modified UserController.java in commit 22e22bb1cf29c2d61617ecf394d340c2a73c1616
+Author Armando Soares Sousa modified index.html in commit 4c5a3c43c57ebf0742b808b8ca463a7cbbdd893c
+Author Armando Soares Sousa modified swagger.yaml in commit 4c5a3c43c57ebf0742b808b8ca463a7cbbdd893c
+Author Armando Soares Sousa modified index.html in commit 08917a56ff88b88a0e5b0148b6b5de779fb546aa
+Author Armando Soares Sousa modified swagger-5.yaml in commit 08917a56ff88b88a0e5b0148b6b5de779fb546aa
+Author Armando Soares Sousa modified swagger.yaml in commit f702712fec700d4fad0dbd0a8e88f4f34413e278
+Author Armando Soares Sousa modified Swagger Doc Promocity Web Server.pdf in commit 11e7e5d219f1d551f2c5cb48fadd06690e04b6f3
+Author armandossrecife modified WebSecurityConfig.java in commit 9df4f86d9b61d53ce2daf240a90eef62d9bb2acd
+Author armandossrecife modified index.html in commit 9df4f86d9b61d53ce2daf240a90eef62d9bb2acd
+Author armandossrecife modified ReportCoupon.java in commit 8f44887a4ede2c3bccd64e978d89a3111357e51a
+Author Armando Soares Sousa modified index.html in commit d58e89969c8e53752e2573ef9013f58efe87e204
+Author Armando Soares Sousa modified index.html in commit 2bd186002567b87ff8f839042e6e2c22f05a1869
