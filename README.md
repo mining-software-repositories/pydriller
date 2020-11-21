@@ -16,3 +16,12 @@ $ pip install pydriller
 ```
 $ python general_information.py > report-repository.txt
 ```
+3. Run the script python
+```
+$ python main.py
+```
+4. The following files are automatically generated after the analysis is finished. 
+```
+$ img/repository_name.png
+$ json/repository_name.json
+```
