@@ -24,3 +24,11 @@ class Util:
             subindent = ' ' * 4 * (level + 1)
             for f in files:
                 print('{}{}'.format(subindent, f))
+
+    @staticmethod
+    def listAllFilesFromDirectory():
+        start_path = '.' # current directory
+
+        for path,dirs,files in os.walk(start_path):
+            for filename in files:
+                print( os.path.join(path,filename) )
