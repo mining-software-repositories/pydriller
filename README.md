@@ -14,7 +14,7 @@ $ pip install pydriller
 ```
 2. Run the script python
 ```
-$ python general_information.py > report-repository.txt
+$ python tests/general_information.py > tests/report-repository.txt
 ```
 3. Run the script python
 ```
@@ -28,6 +28,7 @@ $ json/repository_name.json
 5. Performing tests
 ```
 pip install pytest pytest-html
+cd tests
 pytest -v test_utilities.py --html=pytest_report_test_utilities.html --self-contained-html
 pytest -v test_check_commits.py --html=pytest_report_test_check_commits.html --self-contained-html
 ```

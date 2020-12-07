@@ -1,9 +1,9 @@
 import datetime
-from check_commits import CheckCommits
+from services.check_commits import CheckCommits
 import numpy as np
 from os import path
 import matplotlib.pyplot as plt
-from utilities import Util
+from services.utilities import Util
 from threading import Thread
 import json
 

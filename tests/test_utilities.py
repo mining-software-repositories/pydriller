@@ -1,5 +1,5 @@
 import unittest
-from utilities import Util, DisplayablePath, MyClone, MyEncoder
+from services.utilities import Util, DisplayablePath, MyClone, MyEncoder
 import os.path
 import git
 
