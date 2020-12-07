@@ -28,7 +28,10 @@ $ json/repository_name.json
 5. Performing tests
 ```
 pip install pytest pytest-html
+pip install coverage
 cd tests
 pytest -v test_utilities.py --html=pytest_report_test_utilities.html --self-contained-html
 pytest -v test_check_commits.py --html=pytest_report_test_check_commits.html --self-contained-html
+coverage run -m pytest
+coverage html
 ```
