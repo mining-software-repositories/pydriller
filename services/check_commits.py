@@ -2,7 +2,7 @@ import datetime
 from pydriller import RepositoryMining
 from collections import Counter
 from wordcloud import WordCloud
-from utilities import Util
+from services.utilities import Util
 import matplotlib.pyplot as plt
 
 # Class to analysis all commits from a branch of git repository
@@ -49,6 +49,6 @@ class CheckCommits:
         plt.imshow(wordcloud, interpolation='bilinear')
         plt.axis("off")
         # Save the image in the img folder:
-        pathFile = "img/"
+        pathFile = "/Users/armandosoaressousa/testes/sysrepomsr/img/"
         fileName = pathFile + self.name + ".png"
         wordcloud.to_file(fileName)
