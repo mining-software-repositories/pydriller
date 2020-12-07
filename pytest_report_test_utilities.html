@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Test Report</title>
+    <style>body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  /* do not increase min-width as some may use split screens */
+  min-width: 800px;
+  color: #999;
+}
+
+h1 {
+  font-size: 24px;
+  color: black;
+}
+
+h2 {
+  font-size: 16px;
+  color: black;
+}
+
+p {
+  color: black;
+}
+
+a {
+  color: #999;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+/******************************
+ * SUMMARY INFORMATION
+ ******************************/
+#environment td {
+  padding: 5px;
+  border: 1px solid #E6E6E6;
+}
+
+#environment tr:nth-child(odd) {
+  background-color: #f6f6f6;
+}
+
+/******************************
+ * TEST RESULT COLORS
+ ******************************/
+span.passed, .passed .col-result {
+  color: green;
+}
+
+span.skipped, span.xfailed, span.rerun, .skipped .col-result, .xfailed .col-result, .rerun .col-result {
+  color: orange;
+}
+
+span.error, span.failed, span.xpassed, .error .col-result, .failed .col-result, .xpassed .col-result {
+  color: red;
+}
+
+/******************************
+ * RESULTS TABLE
+ *
+ * 1. Table Layout
+ * 2. Extra
+ * 3. Sorting items
+ *
+ ******************************/
+/*------------------
+ * 1. Table Layout
+ *------------------*/
+#results-table {
+  border: 1px solid #e6e6e6;
+  color: #999;
+  font-size: 12px;
+  width: 100%;
+}
+
+#results-table th, #results-table td {
+  padding: 5px;
+  border: 1px solid #E6E6E6;
+  text-align: left;
+}
+
+#results-table th {
+  font-weight: bold;
+}
+
+/*------------------
+ * 2. Extra
+ *------------------*/
+.log:only-child {
+  height: inherit;
+}
+
+.log {
+  background-color: #e6e6e6;
+  border: 1px solid #e6e6e6;
+  color: black;
+  display: block;
+  font-family: "Courier New", Courier, monospace;
+  height: 230px;
+  overflow-y: scroll;
+  padding: 5px;
+  white-space: pre-wrap;
+}
+
+div.image {
+  border: 1px solid #e6e6e6;
+  float: right;
+  height: 240px;
+  margin-left: 5px;
+  overflow: hidden;
+  width: 320px;
+}
+
+div.image img {
+  width: 320px;
+}
+
+div.video {
+  border: 1px solid #e6e6e6;
+  float: right;
+  height: 240px;
+  margin-left: 5px;
+  overflow: hidden;
+  width: 320px;
+}
+
+div.video video {
+  overflow: hidden;
+  width: 320px;
+  height: 240px;
+}
+
+.collapsed {
+  display: none;
+}
+
+.expander::after {
+  content: " (show details)";
+  color: #BBB;
+  font-style: italic;
+  cursor: pointer;
+}
+
+.collapser::after {
+  content: " (hide details)";
+  color: #BBB;
+  font-style: italic;
+  cursor: pointer;
+}
+
+/*------------------
+ * 3. Sorting items
+ *------------------*/
+.sortable {
+  cursor: pointer;
+}
+
+.sort-icon {
+  font-size: 0px;
+  float: left;
+  margin-right: 5px;
+  margin-top: 5px;
+  /*triangle*/
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+}
+
+.inactive .sort-icon {
+  /*finish triangle*/
+  border-top: 8px solid #E6E6E6;
+}
+
+.asc.active .sort-icon {
+  /*finish triangle*/
+  border-bottom: 8px solid #999;
+}
+
+.desc.active .sort-icon {
+  /*finish triangle*/
+  border-top: 8px solid #999;
+}
+</style></head>
+  <body onLoad="init()">
+    <script>/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+ * You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+
+function toArray(iter) {
+    if (iter === null) {
+        return null;
+    }
+    return Array.prototype.slice.call(iter);
+}
+
+function find(selector, elem) { // eslint-disable-line no-redeclare
+    if (!elem) {
+        elem = document;
+    }
+    return elem.querySelector(selector);
+}
+
+function find_all(selector, elem) {
+    if (!elem) {
+        elem = document;
+    }
+    return toArray(elem.querySelectorAll(selector));
+}
+
+function sort_column(elem) {
+    toggle_sort_states(elem);
+    const colIndex = toArray(elem.parentNode.childNodes).indexOf(elem);
+    let key;
+    if (elem.classList.contains('result')) {
+        key = key_result;
+    } else if (elem.classList.contains('links')) {
+        key = key_link;
+    } else {
+        key = key_alpha;
+    }
+    sort_table(elem, key(colIndex));
+}
+
+function show_all_extras() { // eslint-disable-line no-unused-vars
+    find_all('.col-result').forEach(show_extras);
+}
+
+function hide_all_extras() { // eslint-disable-line no-unused-vars
+    find_all('.col-result').forEach(hide_extras);
+}
+
+function show_extras(colresult_elem) {
+    const extras = colresult_elem.parentNode.nextElementSibling;
+    const expandcollapse = colresult_elem.firstElementChild;
+    extras.classList.remove('collapsed');
+    expandcollapse.classList.remove('expander');
+    expandcollapse.classList.add('collapser');
+}
+
+function hide_extras(colresult_elem) {
+    const extras = colresult_elem.parentNode.nextElementSibling;
+    const expandcollapse = colresult_elem.firstElementChild;
+    extras.classList.add('collapsed');
+    expandcollapse.classList.remove('collapser');
+    expandcollapse.classList.add('expander');
+}
+
+function show_filters() {
+    const filter_items = document.getElementsByClassName('filter');
+    for (let i = 0; i < filter_items.length; i++)
+        filter_items[i].hidden = false;
+}
+
+function add_collapse() {
+    // Add links for show/hide all
+    const resulttable = find('table#results-table');
+    const showhideall = document.createElement('p');
+    showhideall.innerHTML = '<a href="javascript:show_all_extras()">Show all details</a> / ' +
+                            '<a href="javascript:hide_all_extras()">Hide all details</a>';
+    resulttable.parentElement.insertBefore(showhideall, resulttable);
+
+    // Add show/hide link to each result
+    find_all('.col-result').forEach(function(elem) {
+        const collapsed = get_query_parameter('collapsed') || 'Passed';
+        const extras = elem.parentNode.nextElementSibling;
+        const expandcollapse = document.createElement('span');
+        if (extras.classList.contains('collapsed')) {
+            expandcollapse.classList.add('expander');
+        } else if (collapsed.includes(elem.innerHTML)) {
+            extras.classList.add('collapsed');
+            expandcollapse.classList.add('expander');
+        } else {
+            expandcollapse.classList.add('collapser');
+        }
+        elem.appendChild(expandcollapse);
+
+        elem.addEventListener('click', function(event) {
+            if (event.currentTarget.parentNode.nextElementSibling.classList.contains('collapsed')) {
+                show_extras(event.currentTarget);
+            } else {
+                hide_extras(event.currentTarget);
+            }
+        });
+    });
+}
+
+function get_query_parameter(name) {
+    const match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+}
+
+function init () { // eslint-disable-line no-unused-vars
+    reset_sort_headers();
+
+    add_collapse();
+
+    show_filters();
+
+    sort_column(find('.initial-sort'));
+
+    find_all('.sortable').forEach(function(elem) {
+        elem.addEventListener('click',
+            function() {
+                sort_column(elem);
+            }, false);
+    });
+}
+
+function sort_table(clicked, key_func) {
+    const rows = find_all('.results-table-row');
+    const reversed = !clicked.classList.contains('asc');
+    const sorted_rows = sort(rows, key_func, reversed);
+    /* Whole table is removed here because browsers acts much slower
+     * when appending existing elements.
+     */
+    const thead = document.getElementById('results-table-head');
+    document.getElementById('results-table').remove();
+    const parent = document.createElement('table');
+    parent.id = 'results-table';
+    parent.appendChild(thead);
+    sorted_rows.forEach(function(elem) {
+        parent.appendChild(elem);
+    });
+    document.getElementsByTagName('BODY')[0].appendChild(parent);
+}
+
+function sort(items, key_func, reversed) {
+    const sort_array = items.map(function(item, i) {
+        return [key_func(item), i];
+    });
+
+    sort_array.sort(function(a, b) {
+        const key_a = a[0];
+        const key_b = b[0];
+
+        if (key_a == key_b) return 0;
+
+        if (reversed) {
+            return key_a < key_b ? 1 : -1;
+        } else {
+            return key_a > key_b ? 1 : -1;
+        }
+    });
+
+    return sort_array.map(function(item) {
+        const index = item[1];
+        return items[index];
+    });
+}
+
+function key_alpha(col_index) {
+    return function(elem) {
+        return elem.childNodes[1].childNodes[col_index].firstChild.data.toLowerCase();
+    };
+}
+
+function key_link(col_index) {
+    return function(elem) {
+        const dataCell = elem.childNodes[1].childNodes[col_index].firstChild;
+        return dataCell == null ? '' : dataCell.innerText.toLowerCase();
+    };
+}
+
+function key_result(col_index) {
+    return function(elem) {
+        const strings = ['Error', 'Failed', 'Rerun', 'XFailed', 'XPassed',
+            'Skipped', 'Passed'];
+        return strings.indexOf(elem.childNodes[1].childNodes[col_index].firstChild.data);
+    };
+}
+
+function reset_sort_headers() {
+    find_all('.sort-icon').forEach(function(elem) {
+        elem.parentNode.removeChild(elem);
+    });
+    find_all('.sortable').forEach(function(elem) {
+        const icon = document.createElement('div');
+        icon.className = 'sort-icon';
+        icon.textContent = 'vvv';
+        elem.insertBefore(icon, elem.firstChild);
+        elem.classList.remove('desc', 'active');
+        elem.classList.add('asc', 'inactive');
+    });
+}
+
+function toggle_sort_states(elem) {
+    //if active, toggle between asc and desc
+    if (elem.classList.contains('active')) {
+        elem.classList.toggle('asc');
+        elem.classList.toggle('desc');
+    }
+
+    //if inactive, reset all other functions and add ascending active
+    if (elem.classList.contains('inactive')) {
+        reset_sort_headers();
+        elem.classList.remove('inactive');
+        elem.classList.add('active');
+    }
+}
+
+function is_all_rows_hidden(value) {
+    return value.hidden == false;
+}
+
+function filter_table(elem) { // eslint-disable-line no-unused-vars
+    const outcome_att = 'data-test-result';
+    const outcome = elem.getAttribute(outcome_att);
+    const class_outcome = outcome + ' results-table-row';
+    const outcome_rows = document.getElementsByClassName(class_outcome);
+
+    for(let i = 0; i < outcome_rows.length; i++){
+        outcome_rows[i].hidden = !elem.checked;
+    }
+
+    const rows = find_all('.results-table-row').filter(is_all_rows_hidden);
+    const all_rows_hidden = rows.length == 0 ? true : false;
+    const not_found_message = document.getElementById('not-found-message');
+    not_found_message.hidden = !all_rows_hidden;
+}
+</script>
+    <h1>pytest_report_test_utilities.html</h1>
+    <p>Report generated on 07-Dec-2020 at 11:46:18 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.0</p>
+    <h2>Environment</h2>
+    <table id="environment">
+      <tr>
+        <td>Packages</td>
+        <td>{"pluggy": "0.13.1", "py": "1.9.0", "pytest": "6.1.2"}</td></tr>
+      <tr>
+        <td>Platform</td>
+        <td>Darwin-18.7.0-x86_64-i386-64bit</td></tr>
+      <tr>
+        <td>Plugins</td>
+        <td>{"html": "3.1.0", "hypothesis": "5.41.3", "metadata": "1.11.0"}</td></tr>
+      <tr>
+        <td>Python</td>
+        <td>3.6.3</td></tr></table>
+    <h2>Summary</h2>
+    <p>8 tests ran in 8.41 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">8 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <h2>Results</h2>
+    <table id="results-table">
+      <thead id="results-table-head">
+        <tr>
+          <th class="sortable result initial-sort" col="result">Result</th>
+          <th class="sortable" col="name">Test</th>
+          <th class="sortable" col="duration">Duration</th>
+          <th class="sortable links" col="links">Links</th></tr>
+        <tr hidden="true" id="not-found-message">
+          <th colspan="4">No results found. Try to check the filters</th></tr></thead>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_utilities.py::TestUtilities::test_createEmptyFile</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>/Users/armandosoaressousa/git/sysrepomsr/temp.txt
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_utilities.py::TestUtilities::test_displayablepath</td>
+          <td class="col-duration">0.02</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>sysrepomsr/
+├── .git/
+│   ├── COMMIT_EDITMSG
+│   ├── config
+│   ├── description
+│   ├── FETCH_HEAD
+│   ├── HEAD
+│   ├── hooks/
+│   │   ├── applypatch-msg.sample
+│   │   ├── commit-msg.sample
+│   │   ├── fsmonitor-watchman.sample
+│   │   ├── post-update.sample
+│   │   ├── pre-applypatch.sample
+│   │   ├── pre-commit.sample
+│   │   ├── pre-push.sample
+│   │   ├── pre-rebase.sample
+│   │   ├── pre-receive.sample
+│   │   ├── prepare-commit-msg.sample
+│   │   └── update.sample
+│   ├── index
+│   ├── info/
+│   │   └── exclude
+│   ├── logs/
+│   │   ├── HEAD
+│   │   └── refs/
+│   │       ├── heads/
+│   │       │   └── master
+│   │       └── remotes/
+│   │           └── origin/
+│   │               ├── HEAD
+│   │               └── master
+│   ├── objects/
+│   │   ├── 05/
+│   │   │   └── af8c999daf93ce7a072ebdb621bfe0ff0e5d49
+│   │   ├── 0a/
+│   │   │   └── 34ba0796e8ce23ef2e5aaba26c5c6ced37c871
+│   │   ├── 14/
+│   │   │   └── 110b2fa0e0e7e1f2236fa1c8f7c6e4640c5ea5
+│   │   ├── 1b/
+│   │   │   └── 886ec3f7750155f9d437ea080781c3c01b3285
+│   │   ├── 2e/
+│   │   │   └── b10531d27d1c2815c0f6f53ee77e25dc385c7f
+│   │   ├── 30/
+│   │   │   └── 02be799601e3bae957ab784e7aebf3060bffa0
+│   │   ├── 3a/
+│   │   │   └── 0e9b98f9db908453a0f88a26aa49e2d630c589
+│   │   ├── 3b/
+│   │   │   └── 61b97794499d7103dd897ba5acfc5bbbe4617e
+│   │   ├── 3c/
+│   │   │   └── ea5276225cf98004b285de3233f794acf685b0
+│   │   ├── 3d/
+│   │   │   └── 1b567f968ab51ce2816a681852df7ed8533dff
+│   │   ├── 3e/
+│   │   │   └── e2947945e83215caedb4ca30c416cef98fe83c
+│   │   ├── 3f/
+│   │   │   └── 498c79266ffe446046adffe857d3efcafcb8d4
+│   │   ├── 40/
+│   │   │   └── 87023aca8e4ce00d4f208808afd80584e4d2a8
+│   │   ├── 41/
+│   │   │   └── dd295f292e75c6ef9468e01d27a34993ea846b
+│   │   ├── 49/
+│   │   │   └── f43f1222b7d5141349fe81dabdc97a90e9a850
+│   │   ├── 50/
+│   │   │   └── 0f6fbc050b8ecacb1f82df25be78e152780ed2
+│   │   ├── 5b/
+│   │   │   └── 04387ecc7221cdfda66027a6b156ac75af12e8
+│   │   ├── 5c/
+│   │   │   └── 80dfebd622208d5c8074f9b4a7c7ae111c7757
+│   │   ├── 69/
+│   │   │   └── 6e4046ff0683e2fd4fabf47b5b31c1fb41a108
+│   │   ├── 81/
+│   │   │   └── a8cf28f1bd52bfd53bfe5b9172d31db4ed34e8
+│   │   ├── 82/
+│   │   │   └── e31e64c511ddbe8b62ee4b2de5a9bc4e9ec093
+│   │   ├── 87/
+│   │   │   └── b90aa15255a4c84a8b54f3923df59bf06122d1
+│   │   ├── 90/
+│   │   │   └── 32421ee104ab068bff2f4da8b56bc640c8d7dc
+│   │   ├── 93/
+│   │   │   └── 047317d3add88802b43c21968fedfd6f322881
+│   │   ├── a3/
+│   │   │   └── 58b4f651d58c8751c5b35c62fa492144ad6a9d
+│   │   ├── a4/
+│   │   │   └── 86f3a59707062e0933d943b669849bf2a76bba
+│   │   ├── b1/
+│   │   │   └── d47708b75f092229c69f138bf2c47cce0f49e2
+│   │   ├── b2/
+│   │   │   └── 129d02ec095473e38bffcf7a99668478411412
+│   │   ├── c5/
+│   │   │   └── 8f92f545372d797c644d6d5a8ce0753db03428
+│   │   ├── cd/
+│   │   │   └── 6fb80e06924d439e195611c3139a02a641033f
+│   │   ├── d2/
+│   │   │   └── cfed46094fc8ca13a161feb09a7a1bc91286a2
+│   │   ├── db/
+│   │   │   └── 5497051d23017dbc4f74f4a3bb9c8f721266d8
+│   │   ├── dd/
+│   │   │   └── dd9939141db181df34c77eb8958d24dd5843ad
+│   │   ├── e4/
+│   │   │   └── ba99cfe826287b87ef6cf14eff12ddc8bc73c4
+│   │   ├── e6/
+│   │   │   └── 0c073f770720e34f048b337f058302c99717b2
+│   │   ├── ec/
+│   │   │   └── d96f644bc472f35a1aa0aad0d34974d06745c1
+│   │   ├── ef/
+│   │   │   └── 45fdd7cbc2312d943a2a04577d0d4afc0d6f0e
+│   │   ├── info/
+│   │   └── pack/
+│   ├── ORIG_HEAD
+│   ├── packed-refs
+│   └── refs/
+│       ├── heads/
+│       │   └── master
+│       ├── remotes/
+│       │   └── origin/
+│       │       ├── HEAD
+│       │       └── master
+│       └── tags/
+├── __pycache__/
+│   ├── test_utilities.cpython-36-pytest-6.1.2.pyc
+│   └── utilities.cpython-36.pyc
+├── analysis-report-promocity.txt
+├── check_commits.py
+├── general_information.py
+├── img/
+│   ├── myadmin.png
+│   ├── sysrepomsr.png
+│   └── systagram.png
+├── json/
+│   ├── analise.json
+│   ├── myadmin.json
+│   └── systagram.json
+├── main.py
+├── pytest_report_test_check_commits.html
+├── pytest_report_test_utilities.html
+├── README.md
+├── temp.txt
+├── test_check_commits.py
+├── test_utilities.py
+├── treemap/
+│   ├── animal-population-by-breed-on_1-march-2010.csv
+│   ├── sales_success.csv
+│   ├── show.py
+│   ├── temp/
+│   │   ├── .ipynb_checkpoints/
+│   │   │   └── treemap-teste-checkpoint.ipynb
+│   │   └── treemap-teste.ipynb
+│   ├── teste1.py
+│   └── vgsales.csv
+└── utilities.py
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_utilities.py::TestUtilities::test_git_clone_remote_repository</td>
+          <td class="col-duration">3.13</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>Cloning into /Users/armandosoaressousa/testes/sysrepomsrupdate 5 1.0 24.0 
+update 4 2.0 24.0 
+update 4 3.0 24.0 
+update 4 4.0 24.0 
+update 4 5.0 24.0 
+update 4 6.0 24.0 
+update 4 7.0 24.0 
+update 4 8.0 24.0 
+update 4 9.0 24.0 
+update 4 10.0 24.0 
+update 4 11.0 24.0 
+update 4 12.0 24.0 
+update 4 13.0 24.0 
+update 4 14.0 24.0 
+update 4 15.0 24.0 
+update 4 16.0 24.0 
+update 4 17.0 24.0 
+update 4 18.0 24.0 
+update 4 19.0 24.0 
+update 4 20.0 24.0 
+update 4 21.0 24.0 
+update 4 22.0 24.0 
+update 4 23.0 24.0 
+update 4 24.0 24.0 
+update 6 24.0 24.0 
+update 9 1.0 22.0 
+update 8 2.0 22.0 
+update 8 3.0 22.0 
+update 8 4.0 22.0 
+update 8 5.0 22.0 
+update 8 6.0 22.0 
+update 8 7.0 22.0 
+update 8 8.0 22.0 
+update 8 9.0 22.0 
+update 8 10.0 22.0 
+update 8 11.0 22.0 
+update 8 12.0 22.0 
+update 8 13.0 22.0 
+update 8 14.0 22.0 
+update 8 15.0 22.0 
+update 8 16.0 22.0 
+update 8 17.0 22.0 
+update 8 18.0 22.0 
+update 8 19.0 22.0 
+update 8 20.0 22.0 
+update 8 21.0 22.0 
+update 8 22.0 22.0 
+update 10 22.0 22.0 
+O repositorio remoto /Users/armandosoaressousa/testes/sysrepomsr foi criado com sucesso no diretorio https://github.com/mining-software-repositories/sysrepomsr
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_utilities.py::TestUtilities::test_git_clone_remote_repository_already_exists_directory</td>
+          <td class="col-duration">0.01</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>Cmd(&#x27;git&#x27;) failed due to: exit code(128)
+  cmdline: git clone -v https://github.com/mining-software-repositories/sysrepomsr /Users/armandosoaressousa/testes/sysrepomsr
+  stderr: &#x27;fatal: destination path &#x27;/Users/armandosoaressousa/testes/sysrepomsr&#x27; already exists and is not an empty directory.
+&#x27;
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_utilities.py::TestUtilities::test_listAllDirectoriesAndFilesFromPath</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>Dicionario: {&#x27;/Users/armandosoaressousa/git/sysrepomsr&#x27;: [0, [&#x27;general_information.py&#x27;, &#x27;test_utilities.py&#x27;, &#x27;pytest_report_test_utilities.html&#x27;, &#x27;README.md&#x27;, &#x27;temp.txt&#x27;, &#x27;test_check_commits.py&#x27;, &#x27;check_commits.py&#x27;, &#x27;analysis-report-promocity.txt&#x27;, &#x27;pytest_report_test_check_commits.html&#x27;, &#x27;utilities.py&#x27;, &#x27;main.py&#x27;]], &#x27;/Users/armandosoaressousa/git/sysrepomsr/img&#x27;: [1, [&#x27;systagram.png&#x27;, &#x27;sysrepomsr.png&#x27;, &#x27;myadmin.png&#x27;]], &#x27;/Users/armandosoaressousa/git/sysrepomsr/json&#x27;: [1, [&#x27;systagram.json&#x27;, &#x27;analise.json&#x27;, &#x27;myadmin.json&#x27;]], &#x27;/Users/armandosoaressousa/git/sysrepomsr/treemap&#x27;: [1, [&#x27;show.py&#x27;, &#x27;animal-population-by-breed-on_1-march-2010.csv&#x27;, &#x27;vgsales.csv&#x27;, &#x27;teste1.py&#x27;, &#x27;sales_success.csv&#x27;]], &#x27;/Users/armandosoaressousa/git/sysrepomsr/treemap/temp&#x27;: [2, [&#x27;treemap-teste.ipynb&#x27;]]}
+Tamanho do dicionario: 5
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_utilities.py::TestUtilities::test_listAllFilesFromDirectory</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>./general_information.py
+./test_utilities.py
+./pytest_report_test_utilities.html
+./README.md
+./temp.txt
+./test_check_commits.py
+./check_commits.py
+./analysis-report-promocity.txt
+./pytest_report_test_check_commits.html
+./utilities.py
+./main.py
+./__pycache__/utilities.cpython-36.pyc
+./__pycache__/test_utilities.cpython-36-pytest-6.1.2.pyc
+./img/systagram.png
+./img/sysrepomsr.png
+./img/myadmin.png
+./json/systagram.json
+./json/analise.json
+./json/myadmin.json
+./.git/ORIG_HEAD
+./.git/config
+./.git/HEAD
+./.git/description
+./.git/index
+./.git/packed-refs
+./.git/COMMIT_EDITMSG
+./.git/FETCH_HEAD
+./.git/objects/3e/e2947945e83215caedb4ca30c416cef98fe83c
+./.git/objects/50/0f6fbc050b8ecacb1f82df25be78e152780ed2
+./.git/objects/3b/61b97794499d7103dd897ba5acfc5bbbe4617e
+./.git/objects/69/6e4046ff0683e2fd4fabf47b5b31c1fb41a108
+./.git/objects/3c/ea5276225cf98004b285de3233f794acf685b0
+./.git/objects/3d/1b567f968ab51ce2816a681852df7ed8533dff
+./.git/objects/93/047317d3add88802b43c21968fedfd6f322881
+./.git/objects/05/af8c999daf93ce7a072ebdb621bfe0ff0e5d49
+./.git/objects/a4/86f3a59707062e0933d943b669849bf2a76bba
+./.git/objects/a3/58b4f651d58c8751c5b35c62fa492144ad6a9d
+./.git/objects/b2/129d02ec095473e38bffcf7a99668478411412
+./.git/objects/e4/ba99cfe826287b87ef6cf14eff12ddc8bc73c4
+./.git/objects/ec/d96f644bc472f35a1aa0aad0d34974d06745c1
+./.git/objects/87/b90aa15255a4c84a8b54f3923df59bf06122d1
+./.git/objects/81/a8cf28f1bd52bfd53bfe5b9172d31db4ed34e8
+./.git/objects/5c/80dfebd622208d5c8074f9b4a7c7ae111c7757
+./.git/objects/3a/0e9b98f9db908453a0f88a26aa49e2d630c589
+./.git/objects/3f/498c79266ffe446046adffe857d3efcafcb8d4
+./.git/objects/30/02be799601e3bae957ab784e7aebf3060bffa0
+./.git/objects/5b/04387ecc7221cdfda66027a6b156ac75af12e8
+./.git/objects/0a/34ba0796e8ce23ef2e5aaba26c5c6ced37c871
+./.git/objects/90/32421ee104ab068bff2f4da8b56bc640c8d7dc
+./.git/objects/b1/d47708b75f092229c69f138bf2c47cce0f49e2
+./.git/objects/dd/dd9939141db181df34c77eb8958d24dd5843ad
+./.git/objects/d2/cfed46094fc8ca13a161feb09a7a1bc91286a2
+./.git/objects/db/5497051d23017dbc4f74f4a3bb9c8f721266d8
+./.git/objects/ef/45fdd7cbc2312d943a2a04577d0d4afc0d6f0e
+./.git/objects/cd/6fb80e06924d439e195611c3139a02a641033f
+./.git/objects/e6/0c073f770720e34f048b337f058302c99717b2
+./.git/objects/c5/8f92f545372d797c644d6d5a8ce0753db03428
+./.git/objects/41/dd295f292e75c6ef9468e01d27a34993ea846b
+./.git/objects/1b/886ec3f7750155f9d437ea080781c3c01b3285
+./.git/objects/82/e31e64c511ddbe8b62ee4b2de5a9bc4e9ec093
+./.git/objects/49/f43f1222b7d5141349fe81dabdc97a90e9a850
+./.git/objects/40/87023aca8e4ce00d4f208808afd80584e4d2a8
+./.git/objects/2e/b10531d27d1c2815c0f6f53ee77e25dc385c7f
+./.git/objects/14/110b2fa0e0e7e1f2236fa1c8f7c6e4640c5ea5
+./.git/info/exclude
+./.git/logs/HEAD
+./.git/logs/refs/heads/master
+./.git/logs/refs/remotes/origin/HEAD
+./.git/logs/refs/remotes/origin/master
+./.git/hooks/commit-msg.sample
+./.git/hooks/pre-rebase.sample
+./.git/hooks/pre-commit.sample
+./.git/hooks/applypatch-msg.sample
+./.git/hooks/fsmonitor-watchman.sample
+./.git/hooks/pre-receive.sample
+./.git/hooks/prepare-commit-msg.sample
+./.git/hooks/post-update.sample
+./.git/hooks/pre-applypatch.sample
+./.git/hooks/pre-push.sample
+./.git/hooks/update.sample
+./.git/refs/heads/master
+./.git/refs/remotes/origin/HEAD
+./.git/refs/remotes/origin/master
+./treemap/show.py
+./treemap/animal-population-by-breed-on_1-march-2010.csv
+./treemap/vgsales.csv
+./treemap/teste1.py
+./treemap/sales_success.csv
+./treemap/temp/treemap-teste.ipynb
+./treemap/temp/.ipynb_checkpoints/treemap-teste-checkpoint.ipynb
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_utilities.py::TestUtilities::test_list_files</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>sysrepomsr/
+    general_information.py
+    test_utilities.py
+    pytest_report_test_utilities.html
+    README.md
+    temp.txt
+    test_check_commits.py
+    check_commits.py
+    analysis-report-promocity.txt
+    pytest_report_test_check_commits.html
+    utilities.py
+    main.py
+    __pycache__/
+        utilities.cpython-36.pyc
+        test_utilities.cpython-36-pytest-6.1.2.pyc
+    img/
+        systagram.png
+        sysrepomsr.png
+        myadmin.png
+    json/
+        systagram.json
+        analise.json
+        myadmin.json
+    .git/
+        ORIG_HEAD
+        config
+        HEAD
+        description
+        index
+        packed-refs
+        COMMIT_EDITMSG
+        FETCH_HEAD
+        objects/
+            3e/
+                e2947945e83215caedb4ca30c416cef98fe83c
+            50/
+                0f6fbc050b8ecacb1f82df25be78e152780ed2
+            3b/
+                61b97794499d7103dd897ba5acfc5bbbe4617e
+            69/
+                6e4046ff0683e2fd4fabf47b5b31c1fb41a108
+            3c/
+                ea5276225cf98004b285de3233f794acf685b0
+            3d/
+                1b567f968ab51ce2816a681852df7ed8533dff
+            93/
+                047317d3add88802b43c21968fedfd6f322881
+            05/
+                af8c999daf93ce7a072ebdb621bfe0ff0e5d49
+            a4/
+                86f3a59707062e0933d943b669849bf2a76bba
+            a3/
+                58b4f651d58c8751c5b35c62fa492144ad6a9d
+            b2/
+                129d02ec095473e38bffcf7a99668478411412
+            e4/
+                ba99cfe826287b87ef6cf14eff12ddc8bc73c4
+            ec/
+                d96f644bc472f35a1aa0aad0d34974d06745c1
+            pack/
+            87/
+                b90aa15255a4c84a8b54f3923df59bf06122d1
+            81/
+                a8cf28f1bd52bfd53bfe5b9172d31db4ed34e8
+            5c/
+                80dfebd622208d5c8074f9b4a7c7ae111c7757
+            info/
+            3a/
+                0e9b98f9db908453a0f88a26aa49e2d630c589
+            3f/
+                498c79266ffe446046adffe857d3efcafcb8d4
+            30/
+                02be799601e3bae957ab784e7aebf3060bffa0
+            5b/
+                04387ecc7221cdfda66027a6b156ac75af12e8
+            0a/
+                34ba0796e8ce23ef2e5aaba26c5c6ced37c871
+            90/
+                32421ee104ab068bff2f4da8b56bc640c8d7dc
+            b1/
+                d47708b75f092229c69f138bf2c47cce0f49e2
+            dd/
+                dd9939141db181df34c77eb8958d24dd5843ad
+            d2/
+                cfed46094fc8ca13a161feb09a7a1bc91286a2
+            db/
+                5497051d23017dbc4f74f4a3bb9c8f721266d8
+            ef/
+                45fdd7cbc2312d943a2a04577d0d4afc0d6f0e
+            cd/
+                6fb80e06924d439e195611c3139a02a641033f
+            e6/
+                0c073f770720e34f048b337f058302c99717b2
+            c5/
+                8f92f545372d797c644d6d5a8ce0753db03428
+            41/
+                dd295f292e75c6ef9468e01d27a34993ea846b
+            1b/
+                886ec3f7750155f9d437ea080781c3c01b3285
+            82/
+                e31e64c511ddbe8b62ee4b2de5a9bc4e9ec093
+            49/
+                f43f1222b7d5141349fe81dabdc97a90e9a850
+            40/
+                87023aca8e4ce00d4f208808afd80584e4d2a8
+            2e/
+                b10531d27d1c2815c0f6f53ee77e25dc385c7f
+            14/
+                110b2fa0e0e7e1f2236fa1c8f7c6e4640c5ea5
+        info/
+            exclude
+        logs/
+            HEAD
+            refs/
+                heads/
+                    master
+                remotes/
+                    origin/
+                        HEAD
+                        master
+        hooks/
+            commit-msg.sample
+            pre-rebase.sample
+            pre-commit.sample
+            applypatch-msg.sample
+            fsmonitor-watchman.sample
+            pre-receive.sample
+            prepare-commit-msg.sample
+            post-update.sample
+            pre-applypatch.sample
+            pre-push.sample
+            update.sample
+        refs/
+            heads/
+                master
+            tags/
+            remotes/
+                origin/
+                    HEAD
+                    master
+    treemap/
+        show.py
+        animal-population-by-breed-on_1-march-2010.csv
+        vgsales.csv
+        teste1.py
+        sales_success.csv
+        temp/
+            treemap-teste.ipynb
+            .ipynb_checkpoints/
+                treemap-teste-checkpoint.ipynb
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_utilities.py::TestUtilities::test_showProgressBar</td>
+          <td class="col-duration">5.02</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>  0%|          | 0/5 [00:00&lt;?, ?it/s] 20%|██        | 1/5 [00:01&lt;00:04,  1.00s/it] 40%|████      | 2/5 [00:02&lt;00:03,  1.00s/it] 60%|██████    | 3/5 [00:03&lt;00:02,  1.00s/it] 80%|████████  | 4/5 [00:04&lt;00:01,  1.00s/it]100%|██████████| 5/5 [00:05&lt;00:00,  1.00s/it]
+<br/></div></td></tr></tbody></table></body></html>

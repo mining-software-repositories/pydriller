@@ -1,9 +1,49 @@
+import time
+import git
 import os
+from subprocess import Popen, PIPE, STDOUT
 from time import sleep
 from tqdm import tqdm
+from json import JSONEncoder
+from pathlib import Path
+import shutil
+
+# Classe que converte Objeto em JSON
+class MyEncoder(JSONEncoder):
+        def default(self, o):
+            return o.__dict__    
+
+class Progress(git.remote.RemoteProgress):
+    def update(self, op_code, cur_count, max_count=None, message=''):
+        print('update', op_code, cur_count, max_count, message)
+
+# https://www.devdungeon.com/content/working-git-repositories-python
+class MyClone: 
+    def __init__(self, repository_name, git_remote, git_root):
+        self.repository_name = repository_name
+        self.git_remote = git_remote
+        self.git_root = git_root
+    
+    def cloning(self):
+        print('Cloning into %s' % self.git_root, end="", flush=True)
+        git.Repo.clone_from(self.git_remote, self.git_root, progress=Progress())
+
+class MyCloneByProcess:
+    def __init__(self, git_remote):
+        self.git_remote = git_remote
+    
+    def cloning(self):
+        proc = Popen(
+            ["git", "clone", git_remote],
+            stdout=PIPE, stderr=STDOUT, shell=True
+        )
+
+        #stdout, stderr = proc.communicate()
+        for line in proc.stdout:
+            if line:
+                print(line.strip())  # Now you get all terminal clone output text
 
 class Util:
-
     @staticmethod
     def createEmptyFile(path):
         with open(path, 'a') as file:
@@ -32,3 +72,118 @@ class Util:
         for path,dirs,files in os.walk(start_path):
             for filename in files:
                 print( os.path.join(path,filename) )
+
+    # path = "/Users/armandosoaressousa/git/myadmin"
+    @staticmethod
+    def listAllDirectoriesAndFilesFromPath(path):        
+        dictionary_directory_files = {}
+        for dirpath, dirnames, filenames in os.walk(path):
+            directory_level = dirpath.replace(path, "")
+            directory_level = directory_level.count(os.sep)
+            list_level_and_files = []
+            list_files = []
+            for f in filenames:
+                if not f.startswith("."):
+                    list_files.append(f)
+            if (not "." in dirpath) and ("__" not in dirpath):
+                list_level_and_files.append(directory_level)
+                list_level_and_files.append(list_files)
+                dictionary_directory_files[dirpath] = list_level_and_files
+        return dictionary_directory_files
+    # More detaisl in https://janakiev.com/blog/python-filesystem-analysis/
+
+    @staticmethod
+    def CreateDirectoryIfNotExists(path):
+        if not os.path.exists(path):
+            os.makedirs(path)
+
+    @staticmethod
+    def CreateDirectory(path):
+        if os.path.exists(path):
+            # Remove the folder completelly
+            shutil.rmtree(path, ignore_errors=True)
+            # Create the new folder
+            os.makedirs(path)
+
+    @staticmethod
+    def DeleteFileIfExist(path):
+        if os.path.exists(path):
+            os.remove(path)
+        else:
+            print("The file does not exist")
+
+#https://stackoverflow.com/questions/9727673/list-directory-tree-structure-in-python
+class DisplayablePath(object):
+    display_filename_prefix_middle = '├──'
+    display_filename_prefix_last = '└──'
+    display_parent_prefix_middle = '    '
+    display_parent_prefix_last = '│   '
+
+    def __init__(self, path, parent_path, is_last):
+        self.path = Path(str(path))
+        self.parent = parent_path
+        self.is_last = is_last
+        if self.parent:
+            self.depth = self.parent.depth + 1
+        else:
+            self.depth = 0
+
+    @property
+    def displayname(self):
+        if self.path.is_dir():
+            return self.path.name + '/'
+        return self.path.name
+
+    @classmethod
+    def make_tree(cls, root, parent=None, is_last=False, criteria=None):
+        root = Path(str(root))
+        criteria = criteria or cls._default_criteria
+
+        displayable_root = cls(root, parent, is_last)
+        yield displayable_root
+
+        children = sorted(list(path
+                               for path in root.iterdir()
+                               if criteria(path)),
+                          key=lambda s: str(s).lower())
+        count = 1
+        for path in children:
+            is_last = count == len(children)
+            if path.is_dir():
+                yield from cls.make_tree(path,
+                                         parent=displayable_root,
+                                         is_last=is_last,
+                                         criteria=criteria)
+            else:
+                yield cls(path, displayable_root, is_last)
+            count += 1
+
+    @classmethod
+    def _default_criteria(cls, path):
+        return True
+
+    @property
+    def displayname(self):
+        if self.path.is_dir():
+            return self.path.name + '/'
+        return self.path.name
+
+    def displayable(self):
+        if self.parent is None:
+            return self.displayname
+
+        _filename_prefix = (self.display_filename_prefix_last
+                            if self.is_last
+                            else self.display_filename_prefix_middle)
+
+        parts = ['{!s} {!s}'.format(_filename_prefix,
+                                    self.displayname)]
+
+        parent = self.parent
+        while parent and parent.parent is not None:
+            parts.append(self.display_parent_prefix_middle
+                         if parent.is_last
+                         else self.display_parent_prefix_last)
+            parent = parent.parent
+
+        return ''.join(reversed(parts))
