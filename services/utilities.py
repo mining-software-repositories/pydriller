@@ -7,6 +7,9 @@ from tqdm import tqdm
 from json import JSONEncoder
 from pathlib import Path
 import shutil
+import subprocess
+import os
+import curses
 
 # Classe que converte Objeto em JSON
 class MyEncoder(JSONEncoder):
@@ -111,6 +114,21 @@ class Util:
             os.remove(path)
         else:
             print("The file does not exist")
+    
+    @staticmethod
+    def run_command(cmd, check=False, timeout=30, shell=False, log=None):
+        try:
+            proc = subprocess.Popen(cmd, shell=shell, start_new_session=True, stdout = subprocess.PIPE, stderr=subprocess.STDOUT)
+            proc_stdout, proc_stderr = proc.communicate()
+        except subprocess.TimeoutExpired as e:
+            os.killpg(proc.pid, -9)
+            
+        completed = subprocess.CompletedProcess(args=cmd,returncode=proc.returncode,stdout=proc_stdout,stderr=proc_stderr)
+
+        if check and proc.returncode != 0:
+            print(f"{completed.args}, {completed.stdout}, {completed.stderr},{completed.returncode}")
+
+        return completed 
 
 #https://stackoverflow.com/questions/9727673/list-directory-tree-structure-in-python
 class DisplayablePath(object):

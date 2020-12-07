@@ -86,3 +86,7 @@ class TestUtilities(unittest.TestCase):
         except Exception as e:
             print(e)
             self.assertEqual(1,1)    
+
+    def test_run_command(self):
+        cmd_cloc = ['cloc', self.path, '--json', '--by-file',  '--report-file=' + self.repository_name +'.json']
+        print( str(self.util.run_command(cmd_cloc).stdout, 'utf-8') )
